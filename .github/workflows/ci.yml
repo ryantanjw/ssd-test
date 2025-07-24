@@ -1,0 +1,36 @@
+
+name: CI Pipeline
+
+on: [push]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install Flask
+        run: pip install flask
+
+      - name: Run tests
+        run: python -m unittest discover web/tests
+
+  eslint-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install ESLint
+        run: |
+          npm install eslint eslint-plugin-security --save-dev
+          npx eslint web/ --ext .js,.jsx,.ts,.tsx || true

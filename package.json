@@ -1,0 +1,9 @@
+
+{
+  "name": "secure-webapp",
+  "version": "1.0.0",
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "eslint-plugin-security": "^1.4.0"
+  }
+}
