@@ -37,7 +37,7 @@ def is_valid(p):
         re.search(r"[A-Z]", p) and
         re.search(r"[a-z]", p) and
         re.search(r"[0-9]", p) and
-        re.search(r"[!@#$%^&*(),.?":{}|<>]", p)
+        re.search(r"[!@#$%^&*(),.?:{}|<>]", p)
     )
 
 if __name__ == "__main__":

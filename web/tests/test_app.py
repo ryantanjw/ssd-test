@@ -1,6 +1,6 @@
 
 import unittest
-from app import app
+from web.app import app
 
 class WebAppTest(unittest.TestCase):
     def setUp(self):
